@@ -1,7 +1,5 @@
 import Link from "next/link";
-
-const PHONE = "425-919-7837";
-const EMAIL = "mcoctopuspaintingllc@gmail.com";
+import { brand, phoneLink } from "@/lib/brand";
 
 export default function Footer() {
   return (
@@ -9,7 +7,7 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid gap-8 md:grid-cols-3">
           <div>
-            <h3 className="text-lg font-bold">MC Octopus Painting LLC</h3>
+            <h3 className="text-lg font-bold">{brand.businessName}</h3>
             <p className="mt-2 text-sm text-blue-100">
               Professional interior and exterior painting for residential and
               commercial clients.
@@ -49,25 +47,25 @@ export default function Footer() {
             <ul className="mt-2 space-y-2 text-sm text-blue-100">
               <li>
                 <a
-                  href={`tel:${PHONE.replace(/-/g, "")}`}
+                  href={phoneLink(brand.phone)}
                   className="hover:text-white transition-colors"
                 >
-                  {PHONE}
+                  {brand.phone}
                 </a>
               </li>
               <li>
                 <a
-                  href={`mailto:${EMAIL}`}
+                  href={`mailto:${brand.email}`}
                   className="hover:text-white transition-colors break-all"
                 >
-                  {EMAIL}
+                  {brand.email}
                 </a>
               </li>
             </ul>
           </div>
         </div>
         <div className="mt-8 border-t border-blue-700 pt-8 text-center text-sm text-blue-200">
-          © {new Date().getFullYear()} MC Octopus Painting LLC. All rights
+          © {new Date().getFullYear()} {brand.businessName}. All rights
           reserved.
         </div>
       </div>

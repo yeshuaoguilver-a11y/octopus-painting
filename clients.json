@@ -1,0 +1,15 @@
+{
+  "clients": [
+    {
+      "name": "MC Octopus Painting LLC",
+      "city": "Washington",
+      "phone": "425-919-7837",
+      "email": "mcoctopuspaintingllc@gmail.com",
+      "primaryColor": "#c41e3a",
+      "primaryColorDark": "#9e1830",
+      "siteUrl": "https://mcoctopuspainting.com",
+      "slug": "mc-octopus-painting"
+    }
+  ],
+  "_comment": "Add new clients: {\"name\": \"Client Name\", \"city\": \"Seattle\"}. Optional: phone, email, primaryColor, primaryColorDark, siteUrl, slug. Run: python scripts/deploy_client.py <slug> or python scripts/deploy_client.py --all"
+}

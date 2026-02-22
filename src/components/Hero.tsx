@@ -1,7 +1,5 @@
 import Link from "next/link";
-
-const PHONE = "425-919-7837";
-const PHONE_LINK = "tel:4259197837";
+import { brand, phoneLink } from "@/lib/brand";
 
 export default function Hero() {
   return (
@@ -30,10 +28,10 @@ export default function Hero() {
               Request Free Estimate
             </Link>
             <a
-              href={PHONE_LINK}
+              href={phoneLink(brand.phone)}
               className="w-full rounded-md border-2 border-white bg-transparent px-8 py-4 text-center text-lg font-semibold text-white hover:bg-white hover:text-brand-blue transition-colors sm:w-auto"
             >
-              Call {PHONE}
+              Call {brand.phone}
             </a>
           </div>
           <div className="mt-12 flex flex-wrap justify-center gap-8 text-sm text-blue-100">

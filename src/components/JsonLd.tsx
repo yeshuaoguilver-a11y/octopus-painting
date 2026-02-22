@@ -1,16 +1,18 @@
+import { brand } from "@/lib/brand";
+
 const schema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  name: "MC Octopus Painting LLC",
+  name: brand.businessName,
   description:
     "Professional interior and exterior painting for residential and commercial clients. Licensed and insured.",
-  telephone: "425-919-7837",
-  email: "mcoctopuspaintingllc@gmail.com",
-  url: "https://mcoctopuspainting.com",
+  telephone: brand.phone,
+  email: brand.email,
+  url: brand.siteUrl,
   priceRange: "$$",
   areaServed: {
-    "@type": "State",
-    name: "Washington",
+    "@type": "Place",
+    name: brand.city,
   },
   serviceType: [
     "Interior Painting",

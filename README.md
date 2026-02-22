@@ -1,6 +1,6 @@
-# MC Octopus Painting LLC
+# Lead-Gen Factory
 
-Professional contractor website for MC Octopus Painting – residential and commercial interior & exterior painting.
+Multi-tenant contractor website template. One codebase, N client deployments via env vars.
 
 ## Tech Stack
 
@@ -45,6 +45,33 @@ npm start
 - **Red:** `#c41e3a` (brand-red)
 - **Blue:** `#1e3a8a` (brand-blue)
 - **White:** `#ffffff`
+
+## Lead-Gen Factory: Deploy New Clients
+
+Add to `clients.json`:
+
+```json
+{
+  "clients": [
+    { "name": "Acme Painting", "city": "Seattle" }
+  ]
+}
+```
+
+Deploy:
+
+```bash
+export VERCEL_TOKEN="..."
+export GITHUB_REPO="yeshuaoguilver-a11y/octopus-painting"
+python scripts/deploy_client.py acme-painting
+```
+
+## Git Remote
+
+```bash
+git remote set-url origin https://github.com/yeshuaoguilver-a11y/octopus-painting.git
+git push -u origin main
+```
 
 ## Future Integrations (commented in code)
 

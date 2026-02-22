@@ -10,8 +10,8 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          red: "#c41e3a",
-          "red-dark": "#9e1830",
+          red: "var(--brand-red, #c41e3a)",
+          "red-dark": "var(--brand-red-dark, #9e1830)",
           blue: "#1e3a8a",
           "blue-dark": "#1e3a5f",
           white: "#ffffff",

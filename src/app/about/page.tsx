@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { brand } from "@/lib/brand";
 
 export const metadata: Metadata = {
   title: "About",
-  description:
-    "MC Octopus Painting LLC - Licensed and insured residential and commercial painting. Professional crew, quality materials, reliable scheduling.",
+  description: `${brand.businessName} - Licensed and insured residential and commercial painting. Professional crew, quality materials, reliable scheduling.`,
 };
 
 const highlights = [
@@ -31,7 +31,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="prose prose-lg max-w-none">
             <h2 className="text-2xl font-bold text-gray-900">
-              MC Octopus Painting LLC
+              {brand.businessName}
             </h2>
             <p className="text-gray-600">
               We provide high-quality painting services for residential and

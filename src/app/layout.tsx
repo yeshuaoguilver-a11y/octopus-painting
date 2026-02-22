@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ChatWidget from "@/components/ChatWidget";
 import JsonLd from "@/components/JsonLd";
+import { brand } from "@/lib/brand";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -13,18 +14,17 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "MC Octopus Painting | Professional Interior & Exterior Painting",
-    template: "%s | MC Octopus Painting",
+    default: `${brand.businessName} | Professional Interior & Exterior Painting`,
+    template: `%s | ${brand.businessName}`,
   },
-  description:
-    "Licensed & insured residential and commercial painting in Washington. Interior, exterior, cabinets, trim. Request a free estimate. Call 425-919-7837.",
+  description: `Licensed & insured residential and commercial painting in ${brand.city}. Interior, exterior, cabinets, trim. Request a free estimate. Call ${brand.phone}.`,
   keywords: [
     "painting contractor",
     "residential painting",
     "commercial painting",
     "interior painting",
     "exterior painting",
-    "Washington painting",
+    `${brand.city} painting`,
     "house painting",
   ],
   openGraph: {
@@ -39,6 +39,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `:root{--brand-red:${brand.primaryColor};--brand-red-dark:${brand.primaryColorDark};}`,
+          }}
+        />
+      </head>
       <body className={`min-h-screen flex flex-col ${inter.className}`}>
         <JsonLd />
         <Header />

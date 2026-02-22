@@ -2,9 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-
-const PHONE = "425-919-7837";
-const PHONE_LINK = "tel:4259197837";
+import { brand, phoneLink } from "@/lib/brand";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -21,7 +19,7 @@ export default function Header() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2">
           <span className="text-2xl font-bold text-brand-blue">
-            MC OCTOPUS PAINTING
+            {brand.businessNameShort}
           </span>
         </Link>
 
@@ -37,10 +35,10 @@ export default function Header() {
             </Link>
           ))}
           <a
-            href={PHONE_LINK}
+            href={phoneLink(brand.phone)}
             className="rounded-md bg-brand-red px-4 py-2 text-white font-semibold hover:bg-brand-red-dark transition-colors"
           >
-            Call {PHONE}
+            Call {brand.phone}
           </a>
         </div>
 
@@ -92,10 +90,10 @@ export default function Header() {
               </Link>
             ))}
             <a
-              href={PHONE_LINK}
+              href={phoneLink(brand.phone)}
               className="rounded-md bg-brand-red px-4 py-2 text-center text-white font-semibold"
             >
-              Call {PHONE}
+              Call {brand.phone}
             </a>
           </div>
         </div>
