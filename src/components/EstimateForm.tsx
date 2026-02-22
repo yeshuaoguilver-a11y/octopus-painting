@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, FormEvent, useEffect } from "react";
+import { useState, FormEvent, useEffect, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 
 type PropertyType = "residential" | "commercial";
@@ -26,7 +26,7 @@ const initialFormData: FormData = {
   message: "",
 };
 
-export default function EstimateForm() {
+function EstimateFormInner() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [formData, setFormData] = useState<FormData>(initialFormData);
@@ -232,5 +232,13 @@ export default function EstimateForm() {
         </div>
       </div>
     </section>
+  );
+}
+
+export default function EstimateForm() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <EstimateFormInner />
+    </Suspense>
   );
 }
